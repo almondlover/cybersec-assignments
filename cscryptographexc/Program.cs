@@ -12,6 +12,17 @@ namespace cscryptographexc
         {
             Console.WriteLine(Polybius("13231133221544231552344231141542241313311135443433"));
             Console.WriteLine(Vijener("SECURITY", "ITALY"));
+            //menu???
+            //da namerq #2 kade e
+            //#3
+            //encode - dont reverse key for decoding
+            //da sloja decode kato izleze uslovieto
+            Console.WriteLine(Transposition.Transpos("СРЕЩИТЕ СА В МИЛАНО ЛОНДОН И БЕЛГРАД", 
+                                                        Transposition.ReverseKey(new int[] { 4, 5, 3, 2, 1, 6 })));
+            int[] key = new int[] { 1, 5, 3, 4, 2 };
+            string encoded = Transposition.Transpos("ПРЕДПОЧИТАМ МАРКАТА АЛФА-РОМЕО",
+                                                        Transposition.ReverseKey(key));
+            Console.WriteLine(Transposition.ColTranspos(encoded, key.Length));
         }
         static string Polybius(string encrypted)
         {
