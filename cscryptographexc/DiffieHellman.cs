@@ -24,8 +24,9 @@ namespace cscryptographexc
             return Transposition.Transpos(input, key);
         }
         //semantics ig
-        static int PrivateKey(int[] nums)
+        public static int PrivateKey(int[] nums)
         {
+            //q^amodp
             return (int)Math.Pow(nums[1], nums[2]) % nums[0];
         }
         static int Key(int[] nums)

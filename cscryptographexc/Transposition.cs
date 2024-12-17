@@ -38,11 +38,11 @@ namespace cscryptographexc
 			string output = "";
 			for (int i = 0; i < input.Length; i++)
 			{
-                int bidx = i % (input.Length / n);
-
+                //row idx
+				int bidx = i % (input.Length / n);
+				//gets the curr transposed symbol in the mtx
 				output += input[bidx * n + i / (input.Length / n)];
             }
-
 			return output;
 		}
 	}

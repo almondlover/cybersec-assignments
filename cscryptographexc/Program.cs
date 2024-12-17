@@ -23,6 +23,10 @@ namespace cscryptographexc
             string encoded = Transposition.Transpos("ПРЕДПОЧИТАМ МАРКАТА АЛФА-РОМЕО",
                                                         Transposition.ReverseKey(key));
             Console.WriteLine(Transposition.ColTranspos(encoded, key.Length));
+            
+            Console.WriteLine(Combined.ZorgeCipher("MYVACATIONSTARTSON/5/APRIL."));
+
+            Elgamal.FindKey();
         }
         static string Polybius(string encrypted)
         {
