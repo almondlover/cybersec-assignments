@@ -18,8 +18,10 @@ namespace cscryptographexc
             Console.WriteLine("\nМетод на абат Тритемиус\n\n" + DirectSubstitution.Trithemius("INTERNATIONALCONFERENCE", "INFO"));
             Console.WriteLine("\nШифър на Виженер\n\n" + DirectSubstitution.VijenerEncrypt("SECURITY", "ITALY"));
             Console.WriteLine(DirectSubstitution.VijenerDecrypt("KHMASBXR", "ITALY"));
-            //menu???
-            //da namerq #2 kade e
+            //#2
+            Console.WriteLine("\nПросто едноазбучно заместване\n\n" + Substitution.SimpleEncrypt("СОФТУЕР", 3, 2));
+            Console.WriteLine("\nДиректно заместване\n\n" + Substitution.DirectEncrypt("ЗАЩИТАНАЛИЧНИТЕДАННИ"));
+            Console.WriteLine(Substitution.DirectDecrypt("621140895222113260525111"));
             //#3
             //encode - dont reverse key for decoding
             //da sloja decode kato izleze uslovieto
