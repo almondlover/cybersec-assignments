@@ -10,8 +10,14 @@ namespace cscryptographexc
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Polybius("13231133221544231552344231141542241313311135443433"));
-            Console.WriteLine(Vijener("SECURITY", "ITALY"));
+            //upr1
+            Console.WriteLine("Квадрат на Полибий\n\n"+DirectSubstitution.PolybiusDec("13231133221544231552344231141542241313311135443433"));
+            Console.WriteLine(DirectSubstitution.PolybiusEnc("HELLOWORLD"));
+            Console.WriteLine("\nШифър на Цезар\n\n" + DirectSubstitution.CaesarEncrypt("INFORMATICS"));
+            Console.WriteLine(DirectSubstitution.CaesarDecrypt("KHOORZRUOG"));
+            Console.WriteLine("\nМетод на абат Тритемиус\n\n" + DirectSubstitution.Trithemius("INTERNATIONALCONFERENCE", "INFO"));
+            Console.WriteLine("\nШифър на Виженер\n\n" + DirectSubstitution.VijenerEncrypt("SECURITY", "ITALY"));
+            Console.WriteLine(DirectSubstitution.VijenerDecrypt("KHMASBXR", "ITALY"));
             //menu???
             //da namerq #2 kade e
             //#3
@@ -27,27 +33,6 @@ namespace cscryptographexc
             Console.WriteLine(Combined.ZorgeCipher("MYVACATIONSTARTSON/5/APRIL."));
 
             Elgamal.FindKey();
-        }
-        static string Polybius(string encrypted)
-        {
-            string decrypted = "";
-
-            for (int i = 0; i < encrypted.Length; i++)
-            {
-                int charidx = (encrypted[i++] - '1') * 5 + encrypted[i] - '1';
-                decrypted += (char)('A' + charidx + (charidx < 9 ? 0 : 1));
-            }
-            return decrypted;
-        }
-        static string Vijener(string input, string key)
-        {
-            string output = "";
-
-            for (int i = 0; i < input.Length; i++)
-            {
-                output += (char)('A' + (input[i] - 'A' + key[i % key.Length] - 'A') % 26);
-            }
-            return output;
         }
     }
 }
